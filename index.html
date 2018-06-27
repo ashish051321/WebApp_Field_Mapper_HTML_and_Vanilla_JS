@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapper</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ipcontainer">
+            <textarea name="" id="list1" cols="30" rows="10" placeholder="List 1"></textarea>
+            <textarea name="" id="list2" cols="30" rows="10" placeholder="List 2"></textarea>
+        </div>
+        <br>
+        <button class="run" onclick="displayData();">1. Run</button>
+        <button class="run" onclick="showResults();">2. Export</button>
+        <button class="run" onclick="resetEverything();">Reset</button>
+
+        <hr>
+        <div class="opcontainer">
+            <input type="text" id="searchFirstList" placeholder="  Search the below List" onkeyup="searchList1(event);">&nbsp;
+            <button onclick="setNodesCorrect()">Clear List</button>
+            <br>
+            <div class="oplist" id="oplist1"></div>
+        </div>
+
+    </div>
+
+    <template id="filterDropdown">
+
+        <div class="dropdown">
+            <button onclick="showDropdownAndPopulateList(event)" class="dropbtn">Select</button>
+            <div class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction(event)">
+                <!--     <a href="#about" onclick="selectOperation(event)">Sample Value</a> -->
+            </div>
+        </div>
+
+    </template>
+
+    <div class="resultModal">
+        <div class="content">
+            <div class="mappedfields">
+                <div class="resultTitle">All fields from List1 & Mapping</div>
+                <textarea name="" id="resultsTA1" cols="30" rows="10"></textarea>
+            </div>
+            <div class="unmappedList2Fields">
+                <div class="resultTitle">All unmapped fields from List2</div>
+                <textarea name="" id="resultsTA2" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div id="done" onclick="hideModal();">Done</div>
+
+    </div>
+</body>
+
+</html>
